@@ -1,0 +1,14 @@
+version: '3.4'
+services:
+  wormnet2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      network: host
+    command:
+      - "./mywormnet2"
+    ports:
+      - "80:80"
+      - "6667:6667"
+    volumes:
+      - "./mywormnet2.ini:/root/MyWormNET2/mywormnet2.ini"
